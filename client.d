@@ -43,34 +43,16 @@ void sendProgress(Message.Progress.Type type)
 	sendMessage(message);
 }
 
-File realStdout; static this() { realStdout.fdopen(1, "wb"); }
-
 void sendMessage(ref Message message)
 {
-	realStdout.writeln(message.toJson());
-	realStdout.flush();
-}
-
-void redirect(ref File file, Message.Log.Type type)
-{
-	auto pipes = [pipe()].ptr;
-	file = pipes.writeEnd;
-	auto t = new Thread({
-		string line;
-		while ((line = pipes.readEnd.readln()) !is null)
-			sendLog(type, line.chomp());
-	});
-	t.isDaemon = true;
-	t.start();
+	stdout.writeln("dbot-client: ", message.toJson());
+	stdout.flush();
 }
 
 int main(string[] args)
 {
 	try
 	{
-		redirect(stdout, Message.Log.Type.stdout);
-		redirect(stderr, Message.Log.Type.stderr);
-
 		string clientId;
 		string[] fetchList, mergeList;
 
