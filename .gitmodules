@@ -1,3 +1,6 @@
 [submodule "ae"]
 	path = ae
 	url = https://github.com/CyberShadow/ae
+[submodule "dbot-common"]
+	path = dbot
+	url = https://github.com/CyberShadow/dbot-common.git
