@@ -111,7 +111,7 @@ int main(string[] args)
 		sendProgress(Message.Progress.Type.bench);
 
 		// TODO: benchmarks
-		
+
 		sendProgress(Message.Progress.Type.done);
 
 		return 0;
