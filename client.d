@@ -12,6 +12,8 @@ import ae.sys.file;
 import ae.utils.array;
 import ae.utils.json;
 
+static import ae.sys.net.ae;
+
 import common.common;
 
 class TestDManager : DManager
