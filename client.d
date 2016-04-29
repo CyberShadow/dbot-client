@@ -14,7 +14,8 @@ import ae.utils.json;
 
 static import ae.sys.net.ae;
 
-import dbot.common;
+import dbot.config;
+import dbot.protocol;
 
 class TestDManager : DManager
 {
