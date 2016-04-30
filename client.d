@@ -104,6 +104,8 @@ int main(string[] args)
 
 		sendProgress(Message.Progress.Type.test);
 
+		d.checkout(submoduleState);
+
 		foreach (componentName; d.allComponents)
 			d.config.build.components.enable[componentName] = shouldTest(clientId, componentName);
 
