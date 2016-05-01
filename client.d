@@ -21,7 +21,7 @@ class TestDManager : DManager
 {
 	this()
 	{
-		config.local.workDir = "../dbot-work".absolutePath();
+		config.local.workDir = "../dbot-work".absolutePath().buildNormalizedPath();
 		config.local.workDir.ensurePathExists();
 		config.local.cache = "git";
 	}
