@@ -74,6 +74,8 @@ int main(string[] args)
 
 		sendProgress(Message.Progress.Type.fetch);
 
+		d.update();
+
 		// To avoid race conditions, we use the SHA1s from the command line.
 		// We only pull these (and throw away the result) so that we have said SHAs
 		// (in lieu of git/github providing a way to fetch a SHA1 directly).
